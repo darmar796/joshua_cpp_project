@@ -196,9 +196,11 @@ int main()
     
     // handle initial state for Menu Option 7
     // e.g. if user hasn't made any reservations but selects Option 7
-    buffer.str(std::string()); // clear buffer
-    buffer << "No Reservations Found" << endl; // message
-    fn(buffer.str()); // to cout and file.txt
+    // basically just create file.txt and write a message 
+    std::ofstream file("file.txt");
+    file << "No Reservations Found" << endl; // message
+    file.close();
+    
 
     selectedOption = menu();
     
